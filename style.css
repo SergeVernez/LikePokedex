@@ -6,5 +6,14 @@ body {
 	text-align: center;
 }
 h1 {
-	color: #ff6347;
+    font-family: ;
+	font-size: 45px;
+	color: #fcff47;
+	/* text-shadow: -1px -1px 0 red, -1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red; */
+	background: blue;
+	border-radius: 20px;
+	padding: 20px;
+	width: 60vw;
+	margin-left: 20%;
+	box-shadow: 3px 3px 3px lightgray;
 }
