@@ -4,6 +4,10 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	background-image: url("./img/pokemon-7283209_1280.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
 }
 
 .container {
@@ -20,14 +24,15 @@ body {
 h1 {
 	font-size: 45px;
 	font-weight: 900;
-	color: #fcff47;
-	background-color: #0073e6; /* Ajustement de la couleur de fond */
-	border-radius: 10px;
+	color: #ffde00;
+	background-color: #3b4cca;
+	border: 3px solid #161d54;
+	border-radius: 20px;
 	padding: 20px;
 	width: 100%;
 	max-width: 500px;
 	margin-top: 80px;
-	box-shadow: 3px 3px 3px #808080de;
+	box-shadow: 3px 3px 10px #0404046d;
 }
 
 input {
@@ -38,4 +43,5 @@ input {
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	font-size: 16px;
+	box-shadow: 3px 3px 10px #0404046d;
 }
