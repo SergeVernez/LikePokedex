@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	text-align: center;
 	background-image: url("./img/pokemon-7283209_1280.jpg");
-	background-size: cover;
+	background-size: 110%;
 	background-attachment: fixed;
 	background-position: center;
 }
@@ -54,7 +54,7 @@ input {
 	margin-top: 50px;
 }
 .card {
-	background: white;
+	background: #ffffff9b;
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	padding: 20px;
