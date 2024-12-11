@@ -45,3 +45,15 @@ input {
 	font-size: 16px;
 	box-shadow: 3px 3px 10px #0404046d;
 }
+.card {
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	box-sizing: border-box;
+}
+.card img {
+	width: 100%;
+}
