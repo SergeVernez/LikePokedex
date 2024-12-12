@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
-			});
+                myDisplay(data);
+			})
+            .catch(error => console.error('Erreur:',error));
 	}
+    function myDisplay(data) {
+			console.log("données reçues:", data);
+		}
+        fetchPokemon();
 });
