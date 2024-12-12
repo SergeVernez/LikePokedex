@@ -1,5 +1,5 @@
 // On charge tout le document (DOM) pour s'assurer que le script s'applique à tout le DOM
-ocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 	// sélectionne l'element avec l'ID pokemonCard et le stock dans la constante pokemonContainer
 	const pokemonContainer = document.getElementById("pokemonCard");
 
