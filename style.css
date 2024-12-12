@@ -49,7 +49,7 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 20px;
+	gap: 30px;
 	width: 100%;
 	margin-top: 50px;
 }
@@ -59,10 +59,15 @@ input {
 	border-radius: 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px #0000001a;
-	flex: 1 1 30%;
+	flex: 1 1 30%; /*pour répartir les cartes a 3 par ligne */
 	max-width: 300px;
 	text-align: left;
 	box-sizing: border-box;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 20px;
 }
 .card img {
 	width: 100%;
