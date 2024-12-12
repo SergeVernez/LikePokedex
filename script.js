@@ -1,44 +1,50 @@
 // On charge tout le document (DOM) pour s'assurer que le script s'applique à tout le DOM
 document.addEventListener("DOMContentLoaded", () => {
-	// sélectionne l'element avec l'ID pokemonCard et le stock dans la constante pokemonContainer
+	// Sélectionne l'élément avec l'ID 'pokemonCard' et le stocke dans la constante 'pokemonContainer'
 	const pokemonContainer = document.getElementById("pokemonCard");
 
-	//--- Appel de l'API pokémon---
+	// --- Appel de l'API Pokémon ---
 	function fetchPokemon() {
-		//Utilise fetch pour une requete HTTP GET à l'API
-		fetch("https://pokeapi.co/api/v2/pokemon")
-			.then((response) => response.json()) //convertit la reponse en JSON (plus lisible dans la console au lieu de donées brut)
-
-			//---- (1)d'abord on cherche les données qui nous interesse comme ceci (avec des console.log)
-			// .then((data) => {
-			// 	console.log(data); //Affiche les données dans la console
-			// 	myDisplay(data); //Appel la fonction myDisplay
-			// })
-			// .catch((error) => console.error("Erreur:", error)); //Affiche les erreurs de la requete fetch s'il y en a
-
-			// (2)---puis on transforme comme ceci
+		// Utilise fetch pour une requête HTTP GET à l'API
+		fetch("https://pokeapi.co/api/v2/pokemon?limit=15") // pour limiter à 15 Pokémon
+			.then((response) => response.json()) // Convertit la réponse en JSON (plus lisible dans la console au lieu de données brutes)
 			.then((data) => {
-				displayPokemon(data);
+				data.results.forEach((pokemon) => {
+					fetchPokemonData(pokemon); // Appelle fetchPokemonData pour chaque Pokémon
+				});
 			})
-			.catch((error) => console.error("Il y un problème camarade! Erreur lors de la récupération des données du Pokémon", error));
+			.catch((error) => console.error("Il y a un problème camarade! Erreur lors de la récupération des données du Pokémon", error));
 	}
-	// (1) par rapport à la recherche des donnée fonction de récupération console.log
-	// function myDisplay(data) {
-	// 	console.log("données reçues:", data); //fonction pour afficher les données reçu dans la console
-	// }
-	// (2) On modifie la fonction (1) comme ceci:
+
+	// Fonction pour récupérer les données détaillées de chaque Pokémon
+	function fetchPokemonData(pokemon) {
+		// Utilise fetch pour une requête HTTP GET à l'URL spécifique du Pokémon
+		fetch(pokemon.url)
+			.then((response) => response.json()) // Convertit la réponse en JSON
+			.then((data) => {
+				displayPokemon(data); // Appelle la fonction displayPokemon avec les données du Pokémon
+			})
+			.catch((error) => console.error("Erreur lors de la récupération des données du Pokémon:", error));
+	}
+
+	// Fonction pour afficher les données du Pokémon
 	function displayPokemon(pokemon) {
 		const pokemonCard = document.createElement("div");
 		pokemonCard.classList.add("card");
 
 		const pokemonImage = document.createElement("img");
-		pokemonImage.src = pokemon.sprites.front_default;
+		// Vérifie si l'image existe avant d'essayer de l'utiliser
+		if (pokemon.sprites && pokemon.sprites.front_default) {
+			pokemonImage.src = pokemon.sprites.front_default;
+		} else {
+			pokemonImage.src = "https://via.placeholder.com/150"; // Utilise une image de remplacement
+		}
 
 		const pokemonName = document.createElement("h2");
 		pokemonName.textContent = pokemon.name;
 
 		const pokemonNumber = document.createElement("p");
-		pokemonNumber.textContent = `#${pokemon.id}`; //Utilisation d'un template Literals, plus lisibles et plus pratiques quand il y a plusieurs variables ou expressions à inclure dans la chaîne. Il remplace la concaténation traditionnelle: const pokemonNumber = "#" + pokemon.id;
+		pokemonNumber.textContent = `#${pokemon.id}`; // Utilisation d'un template literal
 
 		pokemonCard.appendChild(pokemonImage);
 		pokemonCard.appendChild(pokemonName);
@@ -46,5 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		pokemonContainer.appendChild(pokemonCard);
 	}
-	fetchPokemon(); //Appel la fonction fetchPokemon
+
+	fetchPokemon(); // Appelle la fonction fetchPokemon
 });
