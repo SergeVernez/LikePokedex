@@ -20,31 +20,31 @@ document.addEventListener("DOMContentLoaded", () => {
 			.then((data) => {
 				displayPokemon(data);
 			})
-            .catch(error => console.error("Erreu lors de la récupération des données du Pokémon", error));
+			.catch((error) => console.error("Il y un problème camarade! Erreur lors de la récupération des données du Pokémon", error));
 	}
-    // (1) par rapport à la recherche des donnée fonction de récupération console.log
+	// (1) par rapport à la recherche des donnée fonction de récupération console.log
 	// function myDisplay(data) {
 	// 	console.log("données reçues:", data); //fonction pour afficher les données reçu dans la console
 	// }
-    // (2) On modifie la fonction (1) comme ceci:
-    function displayPokemon(pokemon) {
-        const pokemonCard = document.createElement('div');
-        pokemonCard.classList.add('card');
+	// (2) On modifie la fonction (1) comme ceci:
+	function displayPokemon(pokemon) {
+		const pokemonCard = document.createElement("div");
+		pokemonCard.classList.add("card");
 
-        const pokemonImage = document.createElement("img");
-        pokemonImage.src = pokemon.sprites.front_default;
+		const pokemonImage = document.createElement("img");
+		pokemonImage.src = pokemon.sprites.front_default;
 
-        const pokemonName = document.createElement('h2');
-        pokemonName.textContent = pokemon.name;
+		const pokemonName = document.createElement("h2");
+		pokemonName.textContent = pokemon.name;
 
-        const pokemonNumber = document.createElement('p')
-        pokemonNumber.textContent = `#${pokemon.id}`;
+		const pokemonNumber = document.createElement("p");
+		pokemonNumber.textContent = `#${pokemon.id}`; //Utilisation d'un template Literals, plus lisibles et plus pratiques quand il y a plusieurs variables ou expressions à inclure dans la chaîne. Il remplace la concaténation traditionnelle: const pokemonNumber = "#" + pokemon.id;
 
-        pokemonCard.appendChild(pokemonImage);
-        pokemonCard.appendChild(pokemonName);
-        pokemonCard.appendChild(pokemonNumber);
+		pokemonCard.appendChild(pokemonImage);
+		pokemonCard.appendChild(pokemonName);
+		pokemonCard.appendChild(pokemonNumber);
 
-        pokemonContainer.appendChild(pokemonCard);
-    }
+		pokemonContainer.appendChild(pokemonCard);
+	}
 	fetchPokemon(); //Appel la fonction fetchPokemon
 });
