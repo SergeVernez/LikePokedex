@@ -55,3 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	fetchPokemon(); // Appelle la fonction fetchPokemon
 });
+
+// explication sur le fetch API utilisé ici
+// https://www.pierre-giraud.com/javascript-apprendre-coder-cours/api-fetch/
