@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonContainer.innerHTML = ""; // Efface les Pokémon précédents
 
 		try {
-			// Récupèrer les données de chaque Pokémon de manière asynchrone et les trie par ID
+			// Récupèrer les données de chaque Pokémon de manière asynchrone et les trie dans l'orgdre par leur ID
 			const sortedPokemons = await Promise.all(pokemons.map((pokemon) => fetchPokemonData(pokemon)));
 			sortedPokemons.sort((a, b) => a.id - b.id); // Trie les Pokémon par ID
 			sortedPokemons.forEach((pokemon) => displayPokemon(pokemon)); // Affiche chaque Pokémon trié
