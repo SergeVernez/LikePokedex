@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Sélectionne l'élément avec l'ID 'pokemonCard' et le stocke dans la constante 'pokemonContainer'
 	const pokemonContainer = document.getElementById("pokemonCard");
 
+    //création de la pagination
+    const paginationContainer = document.createElement('div');
+    paginationContainer.classList.add('pagination');
+    document.body.appendChild(paginationContainer);
+
+    const POKEMON_PER_PAGE = 15; //J'affiche 15 pokemons par page
+    let curretPage = 1; // pour définir la page actuelle
+
+
 	// --- Appel de l'API Pokémon ---
 	function fetchPokemon() {
 		// Utilise fetch pour une requête HTTP GET à l'API
