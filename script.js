@@ -78,20 +78,33 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonContainer.appendChild(pokemonCard);
 	}
 
-	// --- Fonction pour configurer la pagination---
+	// --- Mise en place de la pagination---
+	// La pagination est faite comme ceci (UX): flèche precédente, affichage page -1, page actuelle, page suivante, dérnière page, fléche suivante
 	function setupPagination(totalCount, currentPage) {
-		const totalPages = Math.ceil(totalCount / POKEMON_PER_PAGE); // Calcule combien de pages sont nécessaires pour afficher tous les Pokémon, en arrondissant à la page entière la plus proche pour être sûr d'inclure tous les Pokémon (https://www.w3schools.com/jsref/jsref_ceil.asp?form=MG0AV3 + aide de copilot)
+		const totalPages = Math.ceil(totalCount / POKEMON_PER_PAGE); // La méthode Math.ceil() est utilisée pour arrondir un nombre à l'entier supérieur le plus proche. Calcule combien de pages sont nécessaires pour afficher tous les Pokémon, en arrondissant à la page entière la plus proche pour être sûr d'inclure tous les Pokémon (https://www.w3schools.com/jsref/jsref_ceil.asp?form=MG0AV3 + aide de copilot)
 		paginationContainer.innerHTML = ""; // Efface les boutons de pagination précédents
 
 		const createButton = (text, page) => {
+			// Crée une constante 'createButton' et lui assigne une fonction fléchée: La fonction prend deux paramètres : 'text' (le caractère du bouton: 1,2,3,...) et 'page' (le numéro de la page associée au caractère du bouton: page 1 au caractère 1, etc...)
+
 			const button = document.createElement("button");
+			// Crée un nouvel élément HTML <button> et l'assigne à la constante 'button'
+
 			button.textContent = text;
+			// Définit le texte du bouton en utilisant la valeur du paramètre 'text'
+
 			if (page === currentPage) {
+				// vérifie si la page correspont à page actuelle
 				button.disabled = true;
+				// Alors, désactive le bouton pour empêcher l'utilisateur de cliquer dessus
 			} else {
+				// Sinon, exécute ceci:
 				button.addEventListener("click", () => fetchPokemon(page));
+				// Ajoute un écouteur d'événements au bouton pour écouter les clics lorsqu'on clique sur le bouton, la fonction fetchPokemon est appelée avec le numéro de page correspondant. On charge les données de la page désirée.
 			}
+
 			return button;
+			// On return pour permettre l'utilisation du boutton qui vient d'^tre créer
 		};
 
 		// Flèche Précédente
@@ -99,27 +112,32 @@ document.addEventListener("DOMContentLoaded", () => {
 			const prevButton = createButton("«", currentPage - 1);
 			paginationContainer.appendChild(prevButton);
 		}
+		// Si la page actuelle (currentPage) est supérieure à 1, crée un bouton "«" pour aller à la page précédente et l'ajoute au conteneur de pagination(paginationContainer). Puis il agit avec la fonction du bouton créé au dessus (dans ce cas lorsqu'il est cliqué il nous renvoi à la page précedente)
 
 		// Première Page
 		if (currentPage > 1) {
 			const firstButton = createButton("1", 1);
 			paginationContainer.appendChild(firstButton);
 		}
+		// Si la page actuelle (currentPage) est supérieure à 1, crée un bouton "1" pour aller à la première page et l'ajouter au conteneur de pagination. Le bouton charge la première page lorsqu'il est cliqué.
 
 		// Page Précédente
 		if (currentPage > 2) {
 			const prevPageButton = createButton(currentPage - 1, currentPage - 1);
 			paginationContainer.appendChild(prevPageButton);
 		}
+		// Si la page actuelle est supérieure à 2, crée un bouton pour aller à la page précédente (avec le numéro de page affiché) et l'ajoute au conteneur de pagination. Le bouton charge alors la page précédente lorsqu'il est cliqué. La répétition de (currentPage - 1) est nécessaire. Chaque utilisation de (`)currentPage - 1) a une fonction différente : l'une sert à définir le texte affiché sur le bouton et l'autre à indiquer la page qui doit être chargée quand on clique sur ce bouton (currentPage - 1 définit l'action à mener, par exemple aller à la page 2, et currentPage - 1 définit la page où aller, par exemple la page 1).
 
 		// Page Actuelle
 		const currentPageButton = createButton(currentPage, currentPage);
 		paginationContainer.appendChild(currentPageButton);
+		// Crée un bouton pour la page actuelle et l'ajoute au conteneur de pagination. Ce bouton est désactivé car il représente la page actuelle (defini dans la fonction).
 
 		// Page Suivante
 		if (currentPage < totalPages - 1) {
 			const nextPageButton = createButton(currentPage + 1, currentPage + 1);
 			paginationContainer.appendChild(nextPageButton);
+			// Si la page actuelle est inférieure au nombre total de pages moins 1(totalPages - 1), crée un bouton pour aller à la page suivante (currentPage + 1) et on l'ajoute au conteneur de pagination. Le bouton charge la page suivante lorsqu'il est cliqué.
 		}
 
 		// Dernière Page
@@ -127,13 +145,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			const lastButton = createButton(totalPages, totalPages);
 			paginationContainer.appendChild(lastButton);
 		}
+		// Si la page actuelle est inférieure au nombre total de pages (currentPage < totalPages), crée un bouton pour aller à la dernière page puis l'ajoute au conteneur de pagination. Le bouton charge la dernière page lorsqu'il est cliqué.
 
 		// Flèche Suivante
 		if (currentPage < totalPages) {
 			const nextButton = createButton("»", currentPage + 1);
 			paginationContainer.appendChild(nextButton);
 		}
+		// Si la page actuelle est inférieure au nombre total de pages, crée un bouton "»" pour aller à la page suivante et l'ajoute au conteneur de pagination. Le bouton charge la page suivante lorsqu'il est cliqué.
 	}
+	// les noms des variables: prevButton, firstButton, prevPageButton, etc sont utiliser pour une bonne compréhension dans le code. J'aurai tout aussi bien pu utiliser tata, toto, tonton, etc pour les nomer.
 
 	fetchPokemon(currentPage); // Appelle la fonction fetchPokemon pour la première page
 });
