@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// --- Mise en place de la pagination---
-	// La pagination est faite comme ceci (UX): flèche precédente, affichage page -1, page actuelle, page suivante, dérnière page, fléche suivante
+	// La pagination est faite comme ceci: flèche precédente, affichage page -1, page actuelle, page suivante, dérnière page, fléche suivante (tuto https://www.youtube.com/watch?app=desktop&v=WY5X2PpuwqA&t=44s + copilot)
 	function setupPagination(totalCount, currentPage) {
 		const totalPages = Math.ceil(totalCount / POKEMON_PER_PAGE); // La méthode Math.ceil() est utilisée pour arrondir un nombre à l'entier supérieur le plus proche. Calcule combien de pages sont nécessaires pour afficher tous les Pokémon, en arrondissant à la page entière la plus proche pour être sûr d'inclure tous les Pokémon (https://www.w3schools.com/jsref/jsref_ceil.asp?form=MG0AV3 + aide de copilot)
 		paginationContainer.innerHTML = ""; // Efface les boutons de pagination précédents
