@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		try {
 			// --- Utilise fetch pour une requête HTTP GET à l'API ---
-			const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${POKEMON_PER_PAGE}&offset=${offset}`); // Utilisation de template literal
+			const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + POKEMON_PER_PAGE + "&offset=" + offset + "&language=fr_FR");
 			const data = await response.json(); // Convertit la réponse en JSON (plus lisible dans la console au lieu de données brutes)
 			displayPokemonList(data.results); // Affiche la liste des Pokémon
 			setupPagination(data.count, page); // Configure la pagination
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (pokemon.sprites && pokemon.sprites.front_default) {
 			pokemonImage.src = pokemon.sprites.front_default;
 		} else {
-			pokemonImage.src = "https://via.placeholder.com/150"; // Utilise une image de remplacement si l'image du Pokémon n'est pas disponible
+			pokemonImage.src = "https://i.etsystatic.com/35671617/r/il/b962df/4227497410/il_570xN.4227497410_qclf.jpg"; // Autrement, utilise une image de remplacement si l'image du Pokémon n'est pas disponible
 		}
 
 		const pokemonName = document.createElement("h2");
