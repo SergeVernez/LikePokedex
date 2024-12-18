@@ -1,0 +1,29 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f9f9f9;
+	padding: 20px;
+	text-align: center;
+	background-image: url("../img/pokemon-7283209_1280.jpg");
+	background-size: 110%;
+	background-attachment: fixed;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-size: 45px;
+	font-weight: 900;
+	color: #ffde00;
+	background-color: #3b4cca;
+	border: 3px solid black;
+	border-radius: 50px;
+	padding: 20px;
+	width: 100%;
+	max-width: 550px;
+	margin-top: 10px;
+	box-shadow: 3px 3px 10px #0404046d;
+	box-shadow: inset 3px 3px 15px rgb(10, 0, 150);
+	text-shadow: 2px 2px 20px orange;
+}

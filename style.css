@@ -1,4 +1,4 @@
-body {
+/* body {
 	font-family: "Roboto Flex", sans-serif;
 	background-color: #f0f0f0;
 	margin: 0;
@@ -9,18 +9,6 @@ body {
 	background-attachment: fixed;
 	background-position: center;
 }
-
-.container {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 900px;
-	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
-	padding: 20px;
-}
-
 h1 {
 	font-size: 45px;
 	font-weight: 900;
@@ -33,6 +21,17 @@ h1 {
 	max-width: 550px;
 	margin-top: 10px;
 	box-shadow: 3px 3px 10px #0404046d;
+} */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 900px;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	padding: 20px;
 }
 
 input {
