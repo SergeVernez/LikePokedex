@@ -1,26 +1,13 @@
-input {
-	width: 100%;
-	max-width: 553px;
-	padding: 15px;
-	margin-top: 15px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	font-size: 16px;
-	box-shadow: 3px 3px 10px #0404046d;
-	background-color: #fff;
-	color: #333;
-	margin-bottom: 10px;
-}
-
 .nav {
 	display: flex;
 	justify-content: space-between;
 	margin: 15px 0;
 	width: 100%;
-	max-width: 600px;
+	max-width: 590px;
+	margin-top: 50px;
 }
 
-.nav-items {
+.navItems {
 	display: flex;
 	flex-grow: 0.1;
 	align-items: center;
@@ -38,10 +25,10 @@ input {
 	max-height: 40px;
 }
 
-.nav-items:hover {
+.navItems:hover {
 	background-color: #ffde00;
 	color: #3b4cca;
-	border-radius: 10px;
+	border-radius: 30px;
 }
 .navAccueil {
 	display: flex;
@@ -57,8 +44,13 @@ input {
 	border: 2px solid #ffb223;
 	border-radius: 30px;
 	box-shadow: 3px 3px 10px #0404046d;
-	width: 150px;
+	width: 200px;
 	max-height: 40px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navAccueil:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 4px 10px;
 }
 
 .arrow {
@@ -73,7 +65,7 @@ input {
 	max-width: 550px;
 	background: #ffffffc3;
 	border: 1px solid #ddd;
-	border-radius: 10px;
+	border-radius: 30px;
 	padding: 20px;
 	box-shadow: 0 0 10px #0000001a;
 	display: flex;
