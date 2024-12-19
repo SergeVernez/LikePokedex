@@ -27,4 +27,46 @@ document.addEventListener("DOMContentLoaded", () => {
 			console.error("Il y a un problème camarade! Erreur lors de la récupération des données du Pokémon", error);
 		}
 	}
+	function displayPokemonInfo(pokemon) {
+		const pokemonInfoContainer = document.getElementById("infoCard");
+
+		//configuration de l'element "h2"
+		const pokemonNameElement = document.createElement("h2");
+		pokemonNameElement.textContent = pokemon.name + "#" + pokemon.id;
+		//configuration de l'element "img"
+		const pokemonImageElement = document.createElement("img");
+		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url";
+		//cofiguration de l'element "p"
+		const pokemonTypesElement = document.createElement("p");
+		pokemonTypesElement.textContent =
+			"Types : " +
+			pokemon.types
+				.map(function (type) {
+					return type.type.name;
+				})
+				.join(", ");
+		//Ajout d'autres details comme la hauteur du pokemon
+		const pokemonHeightElement = document.createElement("p");
+		pokemonHeightElement.textContent = "hauteur : " + pokemon.height / 10 + "m";
+		//Ajout du poid du pokmon
+		const pokemonWeightElement = document.createElement("p");
+		pokemonWeightElement.textContent = "Poid :" + pokemon.weight / 10 + "kg";
+		//Ajout des capacités du pokemon
+		const pokemonAbilitiesElement = document.createElement("p");
+		pokemonAbilitiesElement.textContent =
+			"Capacités :" +
+			pokemon.abilities
+				.map(function (ability) {
+					return ability.ability.name;
+				})
+				.join(",");
+
+		// Ajoute les éléments créés au conteneur du détail du pokemon dans le DOM
+		pokemonInfoContainer.appendchild(pokemonNameElement);
+		pokemonInfoContainer.appendchild(pokemonImageElement);
+		pokemonInfoContainer.appendchild(pokemonTypesElement);
+		pokemonInfoContainer.appendchild(pokemonHeightElement);
+		pokemonInfoContainer.appendchild(pokemonWeightElement);
+		pokemonInfoContainer.appendchild(pokemonAbilitiesElement);
+	}
 });
