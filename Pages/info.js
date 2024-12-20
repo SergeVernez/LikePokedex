@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonNameElement.textContent = pokemon.name + "#" + pokemon.id;
 		//configuration de l'element "img"
 		const pokemonImageElement = document.createElement("img");
-		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url";
+		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url"; // || opérateur logique OR en lieu et place de if et else pour les valeurs true 
 		//cofiguration de l'element "p"
 		const pokemonTypesElement = document.createElement("p");
 		pokemonTypesElement.textContent =
@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				.join(", ");
 		//Ajout d'autres details comme la hauteur du pokemon
 		const pokemonHeightElement = document.createElement("p");
-		pokemonHeightElement.textContent = "hauteur : " + pokemon.height / 10 + "m";
+		pokemonHeightElement.textContent = "hauteur : " + pokemon.height / 10 + "m"; //: /10 dans ce contexte se réfère à la conversion des valeurs de height (hauteur) et weight (poids) des Pokémon en unités plus lisibles (m et kg)
+
 		//Ajout du poid du pokmon
 		const pokemonWeightElement = document.createElement("p");
 		pokemonWeightElement.textContent = "Poid :" + pokemon.weight / 10 + "kg";
