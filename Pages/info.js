@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		//configuration de l'element "h2"
 		const pokemonNameElement = document.createElement("h2");
-		pokemonNameElement.textContent = pokemon.name + "#" + pokemon.id;
+		pokemonNameElement.textContent = pokemon.name + " #" + pokemon.id;
 		//configuration de l'element "img"
 		const pokemonImageElement = document.createElement("img");
 		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url"; // || opérateur logique OR en lieu et place de if et else pour les valeurs true

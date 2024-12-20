@@ -77,6 +77,13 @@ a {
 	text-align: center;
 	margin-top: 10px;
 }
+.card h2 {
+	font-size: 50px;
+	font-variant: small-caps;
+}
+.card img {
+	width: 100%;
+}
 
 #pokemonDetail {
 	display: inline-block;
@@ -88,12 +95,12 @@ a {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#pokemonDetail img {
+/* #pokemonDetail img {
 	width: 150px;
 }
 
 #pokemonDetail h2 {
-	font-size: 24px;
+	font-size: 54px;
 	color: #161d54;
 }
 
@@ -103,4 +110,4 @@ a {
 }
 #pokemonName {
 	color: #161d54;
-}
+} */
