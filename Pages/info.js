@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const data = await response.json();
 
 			console.log(data);
+			displayPokemonInfo(data);
 		} catch (error) {
 			console.error("Il y a un problème camarade! Erreur lors de la récupération des données du Pokémon", error);
 		}
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonNameElement.textContent = pokemon.name + "#" + pokemon.id;
 		//configuration de l'element "img"
 		const pokemonImageElement = document.createElement("img");
-		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url"; // || opérateur logique OR en lieu et place de if et else pour les valeurs true 
+		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url"; // || opérateur logique OR en lieu et place de if et else pour les valeurs true
 		//cofiguration de l'element "p"
 		const pokemonTypesElement = document.createElement("p");
 		pokemonTypesElement.textContent =
@@ -63,11 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				.join(",");
 
 		// Ajoute les éléments créés au conteneur du détail du pokemon dans le DOM
-		pokemonInfoContainer.appendchild(pokemonNameElement);
-		pokemonInfoContainer.appendchild(pokemonImageElement);
-		pokemonInfoContainer.appendchild(pokemonTypesElement);
-		pokemonInfoContainer.appendchild(pokemonHeightElement);
-		pokemonInfoContainer.appendchild(pokemonWeightElement);
-		pokemonInfoContainer.appendchild(pokemonAbilitiesElement);
+		pokemonInfoContainer.appendChild(pokemonNameElement);
+		pokemonInfoContainer.appendChild(pokemonImageElement);
+		pokemonInfoContainer.appendChild(pokemonTypesElement);
+		pokemonInfoContainer.appendChild(pokemonHeightElement);
+		pokemonInfoContainer.appendChild(pokemonWeightElement);
+		pokemonInfoContainer.appendChild(pokemonAbilitiesElement);
 	}
 });
