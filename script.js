@@ -1,19 +1,28 @@
 // --- On charge tout le document (DOM) pour s'assurer que le script s'applique à tout le DOM--
 document.addEventListener("DOMContentLoaded", () => {
+	console.log("dom entièrement chargé");
+	//declaration de let data en variable globale pour
+	let data = [];
 	// Sélectionne l'élément avec l'ID 'pokemonCard' et le stocke dans un conteneur (const) 'pokemonContainer' qui est à la fois une constante et un conteneur.
 	const pokemonContainer = document.getElementById("pokemonCard");
+	console.log("pokemonContainer", pokemonContainer);
 
 	//----Ajout de la fonction de recherche ----
 	const searchInput = document.getElementById("searchInput");
+	console.log("searchInput:", searchInput);
 	//Ajout de l'écouteur d'évenement de la fonction recherche
-	searchInput.addEventListener("input", function (event) {
-		const query = event.target.value.trim().toLowerCase();
+	searchInput.addEventListener("change", function (event) {
+		console.log("recherche déclenché");
+		const query = event.target.value.trim().toLowerCase(); //est utilisée pour enlever les espaces blancs de part et d'autre d'une chaîne de caractères. Les espaces blancs peuvent inclure les espaces standards, les tabulations (\t), et d'autres caractères d'espace tels que les retours à la ligne (\n).
+		console.log(query);
 		pokemonContainer.innerHTML = ""; //efface les resultats précedents
+		console.log("données non filtrées", data.results);
 		if (query.length >= 3) {
-			const filterData = data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query));
-			console.log("donées filtrées : ", filteredData);
+			const filterData = data.results.filter((item) => item.name.toLowerCase().includes(query));
+
+			console.log("données filtrées", filterData);
 			displayPokemonList(filterData);
-		}
+		} // /!\ A FAIRE : AJOUTER UN ELSE ICI SI INFERIEUR A 3 CARACTERES DE RECHERCHE
 	});
 
 	// --- Création d'un conteneur (const) pour la pagination---
@@ -32,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		try {
 			// --- Utilise fetch pour une requête HTTP GET à l'API ---
 			const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + POKEMON_PER_PAGE + "&offset=" + offset + "&language=fr_FR");
-			const data = await response.json(); // Convertit la réponse en JSON (plus lisible dans la console au lieu de données brutes)
+			data = await response.json(); // Convertit la réponse en JSON (plus lisible dans la console au lieu de données brutes)
 			displayPokemonList(data.results); // Affiche la liste des Pokémon
 			setupPagination(data.count, page); // Configure la pagination
 		} catch (error) {
