@@ -2,8 +2,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 	// Sélectionne l'élément avec l'ID 'pokemonCard' et le stocke dans un conteneur (const) 'pokemonContainer' qui est à la fois une constante et un conteneur.
 	const pokemonContainer = document.getElementById("pokemonCard");
-	//Ajout de la fonction de recherche
+	
+	//----Ajout de la fonction de recherche ----
 	const searchInput = document.getElementById("searchInput");
+	//Ajout de l'écouteur d'évenement de la fonction recherche
+	searchInput.addEventListener('input', function(event) {
+		const query = event.target.value.trim().toLowerCase();
+		pokemonContainer.innerHTML = ''; //efface les resultats précedents
+		if (query.length >= 3) {
+			const filterData = data.filter(item => item.nom.toLowercase().includes(query));
+
+			displayPokemonList(filterData)
+		}
+	})
 
 	// --- Création d'un conteneur (const) pour la pagination---
 	const paginationContainer = document.createElement("div"); // Crée un <div> pour afficher la pagination
