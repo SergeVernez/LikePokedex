@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	//----Ajout de la fonction de recherche ----
 	const searchInput = document.getElementById("searchInput");
 	//Ajout de l'écouteur d'évenement de la fonction recherche
-	searchInput.addEventListener('input', function(event) {
+	searchInput.addEventListener("input", function (event) {
 		const query = event.target.value.trim().toLowerCase();
-		pokemonContainer.innerHTML = ''; //efface les resultats précedents
+		pokemonContainer.innerHTML = ""; //efface les resultats précedents
 		if (query.length >= 3) {
-			const filterData = data.filter(item => item.nom.toLowerCase().includes(query));
-
-			displayPokemonList(filterData)
+			const filterData = data.filter((item) => item.name.toLowerCase().includes(query) || item.description.toLowerCase().includes(query));
+			console.log("donées filtrées : ", filteredData);
+			displayPokemonList(filterData);
 		}
-	})
+	});
 
 	// --- Création d'un conteneur (const) pour la pagination---
 	const paginationContainer = document.createElement("div"); // Crée un <div> pour afficher la pagination
