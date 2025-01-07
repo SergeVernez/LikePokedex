@@ -72,3 +72,4 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonInfoContainer.appendChild(pokemonAbilitiesElement);
 	}
 });
+

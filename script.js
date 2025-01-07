@@ -53,9 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// ---- Fonction pour afficher les données du Pokémon---
+
+	//--- Avant modif
+	// function displayPokemon(pokemon) {
+	// 	const pokemonCard = document.createElement("div");
+	// 	pokemonCard.classList.add("card");
+
+	//--- Après modif
 	function displayPokemon(pokemon) {
 		const pokemonCard = document.createElement("div");
 		pokemonCard.classList.add("card");
+		pokemonCard.addEventListener("click", () => {
+			window.location.href = "./pages/info.html?pokemon=" + pokemon.name; // Redirige vers la page info.html avec le nom du Pokémon en paramètre dans l'URL
+		});
 
 		const pokemonImage = document.createElement("img");
 		// Vérifie si l'image existe avant d'essayer de l'utiliser
