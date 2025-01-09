@@ -55,6 +55,7 @@ h1 {
 #backToTop:hover {
 	background-color: #ffa500;
 	transform: scale(1.08);
+	border-radius: 50px;
 }
 html {
 	scroll-behavior: smooth;
