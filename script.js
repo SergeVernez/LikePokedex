@@ -158,6 +158,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		} // Si la page actuelle est inférieure au nombre total de pages, crée un bouton "»" pour aller à la page suivante et l'ajoute au conteneur de pagination. Le bouton charge la page suivante lorsqu'il est cliqué.
 	} // les noms des variables: prevButton, firstButton, prevPageButton, etc sont utiliser pour une bonne compréhension dans le code. J'aurai tout aussi bien pu utiliser tata, toto, tonton, etc pour les nomer.
 	fetchPokemon(currentPage); // Appelle la fonction fetchPokemon pour la première page
+
+	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas de 20px
+	window.onscroll = function () {
+		scrollFunction();
+	};
+
+	function scrollFunction() {
+		const backToTopButton = document.getElementById("backToTop");
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			backToTopButton.style.display = "block";
+		} else {
+			backToTopButton.style.display = "none";
+		}
+	}
+
+	// Retourne en haut de la page lorsque l'utilisateur clique sur le bouton
+	document.getElementById("backToTop").addEventListener("click", function () {
+		document.body.scrollTop = 0; // Pour Safari
+		document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
+	});
 });
 
 // --- explication sur le fetch API utilisé ici>> https://www.pierre-giraud.com/javascript-apprendre-coder-cours/api-fetch/

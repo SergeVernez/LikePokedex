@@ -39,3 +39,23 @@ h1 {
 	box-shadow: inset 3px 3px 15px #0a0096;
 	text-shadow: 2px 2px 20px #ffa500;
 }
+#backToTop {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	background-color: #ffde00; /* Couleur de fond */
+	box-shadow: 3px 3px 10px #0404046d;
+	border: none; /* Sans bordure */
+	padding: 15px; /* Padding */
+	border-radius: 10px; /* Coins arrondis */
+	cursor: pointer; /* Curseur en forme de main */
+	z-index: 100; /* S'affiche par-dessus les autres éléments */
+}
+
+#backToTop:hover {
+	background-color: #ffa500;
+	transform: scale(1.08);
+}
+html {
+	scroll-behavior: smooth;
+}
