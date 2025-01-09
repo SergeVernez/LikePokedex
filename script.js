@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const searchInput = document.getElementById("searchInput");
 	console.log("searchInput:", searchInput);
 	//Ajout de l'écouteur d'évenement de la fonction recherche
-	searchInput.addEventListener("change", function (event) {
+	searchInput.addEventListener("input", function (event) {
 		console.log("recherche déclenché");
 		const query = event.target.value.trim().toLowerCase();
 		console.log(query);
