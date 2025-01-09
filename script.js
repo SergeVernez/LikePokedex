@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			console.log("données filtrées", filterData);
 			displayPokemonList(filterData);
 		} else {
-			fetchPokemon(currentPage);
+			// fetchPokemon(currentPage);
+			displayPokemonList(data.results.slice((currentPage - 1) * POKEMON_PER_PAGE, currentPage * POKEMON_PER_PAGE)); // (currentPage - 1) * POKEMON_PER_PAGE : Calcule l'indice de début de la portion à extraire. Par exemple, si currentPage est 2 et POKEMON_PER_PAGE est 15, l'indice de début sera (2 - 1) * 15 = 15. // currentPage * POKEMON_PER_PAGE : Calcule l'indice de fin de la portion à extraire. Avec les mêmes valeurs, l'indice de fin sera 2 * 15 = 30.
 		}
 	});
 	// --- Création d'un conteneur (const) pour la pagination---
