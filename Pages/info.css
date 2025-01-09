@@ -16,7 +16,7 @@
 	font-variant: small-caps;
 	cursor: pointer;
 	color: #161d54;
-	background-color: #ffffffc3;
+	background-color: #2d9bcec9;
 	border: 2px solid #161d54;
 	border-radius: 30px;
 	box-shadow: 3px 3px 10px #0404046d;
@@ -34,6 +34,7 @@ a {
 	color: #ffb223;
 }
 .navAccueil {
+	margin: 0 5px 0 5px;
 	display: flex;
 	flex-grow: 0.1;
 	align-items: center;
@@ -111,3 +112,7 @@ a {
 #pokemonName {
 	color: #161d54;
 } */
+h3 {
+	font-size: 20px;
+	color: red;
+}

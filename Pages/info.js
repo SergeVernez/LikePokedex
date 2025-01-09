@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const pokemonImageElement = document.createElement("img");
 		pokemonImageElement.src = pokemon.sprites.front_default || "default-image-url"; // || opérateur logique OR en lieu et place de if et else pour les valeurs true
 		//cofiguration de l'element "p"
-		const pokemonTypesElement = document.createElement("p");
+		const pokemonTypesElement = document.createElement("h4");
 		pokemonTypesElement.textContent =
 			"Types : " +
 			pokemon.types
@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				})
 				.join(", ");
 		//Ajout d'autres details comme la hauteur du pokemon
-		const pokemonHeightElement = document.createElement("p");
+		const pokemonHeightElement = document.createElement("h3");
 		pokemonHeightElement.textContent = "hauteur : " + pokemon.height / 10 + "m"; //: /10 dans ce contexte se réfère à la conversion des valeurs de height (hauteur) et weight (poids) des Pokémon en unités plus lisibles (m et kg)
 
 		//Ajout du poid du pokmon
-		const pokemonWeightElement = document.createElement("p");
+		const pokemonWeightElement = document.createElement("h3");
 		pokemonWeightElement.textContent = "Poid :" + pokemon.weight / 10 + "kg";
 		//Ajout des capacités du pokemon
-		const pokemonAbilitiesElement = document.createElement("p");
+		const pokemonAbilitiesElement = document.createElement("h4");
 		pokemonAbilitiesElement.textContent =
 			"Capacités :" +
 			pokemon.abilities
