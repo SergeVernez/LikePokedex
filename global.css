@@ -43,13 +43,13 @@ h1 {
 	position: fixed;
 	bottom: 40px;
 	right: 80px;
-	background-color: #ffde00; /* Couleur de fond */
+	background-color: #ffde00;
 	box-shadow: 3px 3px 10px #0404046d;
-	border: none; /* Sans bordure */
-	padding: 15px; /* Padding */
-	border-radius: 10px; /* Coins arrondis */
-	cursor: pointer; /* Curseur en forme de main */
-	z-index: 100; /* S'affiche par-dessus les autres éléments */
+	border: none;
+	padding: 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	z-index: 100;
 }
 
 #backToTop:hover {
