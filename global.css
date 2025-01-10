@@ -42,7 +42,7 @@ h1 {
 #backToTop {
 	position: fixed;
 	bottom: 40px;
-	right: 40px;
+	right: 80px;
 	background-color: #ffde00; /* Couleur de fond */
 	box-shadow: 3px 3px 10px #0404046d;
 	border: none; /* Sans bordure */
@@ -53,8 +53,8 @@ h1 {
 }
 
 #backToTop:hover {
-	background-color: #ffa500;
-	transform: scale(1.08);
+	background-color: #ffde00;
+	transform: scale(1.2);
 	border-radius: 50px;
 }
 html {

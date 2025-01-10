@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function scrollFunction() {
 		const backToTopButton = document.getElementById("backToTop");
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
 			backToTopButton.style.display = "block";
 		} else {
 			backToTopButton.style.display = "none";
