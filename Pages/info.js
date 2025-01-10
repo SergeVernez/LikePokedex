@@ -72,4 +72,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonInfoContainer.appendChild(pokemonWeightElement);
 		pokemonInfoContainer.appendChild(pokemonAbilitiesElement);
 	}
+	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas
+	window.onscroll = function () {
+		scrollFunction();
+	};
+
+	function scrollFunction() {
+		const backToTopButton = document.getElementById("backToTop");
+		if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+			backToTopButton.style.display = "block";
+		} else {
+			backToTopButton.style.display = "none";
+		}
+	}
+
+	// Retourne en haut de la page lorsque l'utilisateur clique sur le bouton
+	document.getElementById("backToTop").addEventListener("click", function () {
+		document.body.scrollTop = 0; // Pour Safari
+		document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
+	});
 });
+

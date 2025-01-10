@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	} // les noms des variables: prevButton, firstButton, prevPageButton, etc sont utiliser pour une bonne compréhension dans le code. J'aurai tout aussi bien pu utiliser tata, toto, tonton, etc pour les nomer.
 	fetchPokemon(currentPage); // Appelle la fonction fetchPokemon pour la première page
 
-	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas de 20px
+	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas
 	window.onscroll = function () {
 		scrollFunction();
 	};
