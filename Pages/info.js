@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				.join(", ");
 
 		//Ajout des capacités du pokemon
-		const pokemonAbilitiesElement = document.createElement("h4");
+		const pokemonAbilitiesElement = document.createElement("h5");
 		pokemonAbilitiesElement.textContent =
-			"Capacités :" +
+			"Capacités : " +
 			pokemon.abilities
 				.map(function (ability) {
 					return ability.ability.name;
@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 				.join(",");
 		//Ajout d'autres details comme la hauteur du pokemon
 		const pokemonHeightElement = document.createElement("h3");
-		pokemonHeightElement.textContent = "hauteur : " + pokemon.height / 10 + "m"; //: /10 dans ce contexte se réfère à la conversion des valeurs de height (hauteur) et weight (poids) des Pokémon en unités plus lisibles (m et kg)
+		pokemonHeightElement.textContent = "Hauteur : " + pokemon.height / 10 + "m"; //: /10 dans ce contexte se réfère à la conversion des valeurs de height (hauteur) et weight (poids) des Pokémon en unités plus lisibles (m et kg)
 
 		//Ajout du poid du pokmon
 		const pokemonWeightElement = document.createElement("h3");
-		pokemonWeightElement.textContent = "Poid :" + pokemon.weight / 10 + "kg";
+		pokemonWeightElement.textContent = "Poid : " + pokemon.weight / 10 + "kg";
 
 		// Ajoute les éléments créés au conteneur du détail du pokemon dans le DOM
 		pokemonInfoContainer.appendChild(pokemonNameElement);
