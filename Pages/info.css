@@ -58,6 +58,30 @@ a {
 	box-shadow: 0 4px 10px;
 }
 
+.navRetour {
+	margin: 0 5px 0 5px;
+	display: flex;
+	flex-grow: 0.1;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-weight: 600;
+	font-variant: small-caps;
+	cursor: pointer;
+	color: #ffb223;
+	background-color: #ff990057;
+	border: 2px solid #ffb223;
+	border-radius: 15px;
+	box-shadow: 3px 3px 10px #0404046d;
+	width: 200px;
+	height: 40px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navRetour:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 4px 10px;
+}
+
 .arrow {
 	font-size: 30px;
 	margin-right: 10px;

@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Mise à jour du bouton retour avec numéro de page
-	document.querySelector(".navItems .arrow").addEventListener("click", function () {
+	document.querySelector(".navRetour ").addEventListener("click", function () {
 		window.location.href = "../index.html?page=" + page;
 	});
 
