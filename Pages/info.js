@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Récupère la valeur du paramètre 'pokemon' dans l'URL. Par exemple, pour 'info.html?pokemon=charizard', pokemonName sera 'charizard'
 	const pokemonName = urlParams.get("pokemon");
 
+	const page = urlParams.get("page") || 1;
+
 	// Vérifie si un nom de Pokémon a été trouvé dans les paramètres de l'URL
 	if (pokemonName) {
 		// Appelle la fonction fetchPokemonDetails avec le nom du Pokémon pour récupérer ses détails depuis l'API
