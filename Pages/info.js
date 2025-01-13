@@ -72,6 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		pokemonInfoContainer.appendChild(pokemonWeightElement);
 		pokemonInfoContainer.appendChild(pokemonAbilitiesElement);
 	}
+
+	// Mise à jour du bouton retour avec numéro de page
+	document.querySelector("navItems .arrow").addEventListener("click", function () {
+		window.location.href = "../index.html?page=" + vpage;
+	});
+
 	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas
 	window.onscroll = function () {
 		scrollFunction();
@@ -92,4 +98,3 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.documentElement.scrollTop = 0; // Pour Chrome, Firefox, IE et Opera
 	});
 });
-

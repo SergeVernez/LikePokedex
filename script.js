@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const pokemonCard = document.createElement("div");
 		pokemonCard.classList.add("card");
 		pokemonCard.addEventListener("click", () => {
-			window.location.href = "./pages/info.html?pokemon=" + pokemon.name; // Redirige vers la page info.html avec le nom du Pokémon en paramètre dans l'URL
+			window.location.href = "./pages/info.html?pokemon=" + pokemon.name + "&page=" + currentPage; // Redirige vers la page info.html avec le nom du Pokémon en paramètre dans l'URL
 		});
 
 		const pokemonImage = document.createElement("img");
