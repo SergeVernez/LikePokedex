@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Mise à jour du bouton retour avec numéro de page
-	document.querySelector("navItems .arrow").addEventListener("click", function () {
-		window.location.href = "../index.html?page=" + vpage;
+	document.querySelector(".navItems .arrow").addEventListener("click", function () {
+		window.location.href = "../index.html?page=" + page;
 	});
 
 	// Affiche le bouton lorsque l'utilisateur fait défiler vers le bas
