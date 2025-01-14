@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		};
 		// Flèche Précédente
 		if (currentPage > 1) {
-			const prevButton = createButton("«", currentPage - 1);
+			const prevButton = createButton("◀️", currentPage - 1);
 			paginationContainer.appendChild(prevButton);
 		} // Si la page actuelle (currentPage) est supérieure à 1, crée un bouton "«" pour aller à la page précédente et l'ajoute au conteneur de pagination(paginationContainer). Puis il agit avec la fonction du bouton créé au dessus (dans ce cas lorsqu'il est cliqué il nous renvoi à la page précedente)
 
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// Flèche Suivante
 		if (currentPage < totalPages) {
-			const nextButton = createButton("»", currentPage + 1);
+			const nextButton = createButton("▶️", currentPage + 1);
 			paginationContainer.appendChild(nextButton);
 		} // Si la page actuelle est inférieure au nombre total de pages, crée un bouton "»" pour aller à la page suivante et l'ajoute au conteneur de pagination. Le bouton charge la page suivante lorsqu'il est cliqué.
 	} // les noms des variables: prevButton, firstButton, prevPageButton, etc sont utiliser pour une bonne compréhension dans le code. J'aurai tout aussi bien pu utiliser tata, toto, tonton, etc pour les nomer.
